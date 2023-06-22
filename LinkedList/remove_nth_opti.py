@@ -16,35 +16,19 @@ class ListNode:
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
 
-        # reverse the list
-        prev = None
-        while head:
-            next_node = head.next
-            head.next = prev
-            prev = head
-            head = next_node
+        dummy = ListNode(0, head)
+        left = dummy
+        right = head
 
-        k = 1
-        second = prev
-        if n == 1:
-            prev = prev.next
-        while second:
-            if k+1 == n and second.next:
-                second.next = second.next.next
-            elif k+1 == n and second.next is None:
-                second.next = None
-            second = second.next
-            k += 1
+        while n > 0:
+            right = right.next
+            n -= 1
+        while right:
+            right = right.next
+            left = left.next
 
-        # rearrange it back
-
-        order = None
-        while prev:
-            next_node = prev.next
-            prev.next = order
-            order = prev
-            prev = next_node
-        return order
+        left.next = left.next.next
+        return dummy.next
 
 
 def main():
