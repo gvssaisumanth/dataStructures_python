@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 
 def quick_sort(seq):
     if len(seq) <= 1:

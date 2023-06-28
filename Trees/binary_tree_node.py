@@ -23,7 +23,7 @@ class BinaryTree:
             else:
                 self._insert(data, curr_node.left)
         elif data > curr_node.data:
-            if curr_node.right is None:
+            if curr_node.right is None: 
                 curr_node.right = Node(data)
             else:
                 self._insert(data, curr_node)
