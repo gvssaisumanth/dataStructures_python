@@ -10,6 +10,8 @@ def partition(array, low, high,):
         if array[j] <= pivot:
             i += 1
 
+            # here index i will be pointing the value which is greater than pivot and since we need to move it to the other side
+            # we will be swapping
             (array[i], array[j]) = (array[j], array[i])
     # by the end of the loop the i will be at i-1 postion of the pivot
     # meaning the sorted position of pivot is i+1 since pivot is high we swap them
