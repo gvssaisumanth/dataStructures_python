@@ -31,8 +31,22 @@ edges = [
     (4, 3, -3),
 ]
 
+edges2 = [
+    # (source, target, weight)
+    (0, 1, 1),
+    (1, 2, 2),
+    (2, 0, -4),
+]
 num_nodes = 5
 
 source = 0  # start node
 
 success, distances, predecessors = bellman_ford(edges, num_nodes, source)
+
+success, distances, predecessors = bellman_ford(edges2, num_nodes, source)
+
+if success:
+    print(f"Shortest distances from node {source}: {distances}")
+    print(f"Predecessors by node: {predecessors}")
+else:
+    print("Graph contains a negative-weight cycle.")
