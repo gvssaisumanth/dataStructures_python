@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+#Node class
 class Node:
     def __init__(self, data=None):
         self.data = data
